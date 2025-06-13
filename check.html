@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio - Devagiri Neeraj Babu</title>
+  <style>
+    /* Reset margins and ensure full height without scrollbars */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* Prevents scrolling */
+    }
+
+    body {
+      display: flex;
+      background-color: black;
+      color: white;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .nav {
+      width: 25vw;
+      height: 100vh; /* Ensure it fills full height */
+      background-color: #111;
+    }
+
+    .display {
+      width: 75vw;
+      height: 100vh;
+      background-image: url('home_screen.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .topleft {
+      height: 25vh;
+      border: 2px solid rgb(60, 60, 60); /* You missed 'solid' */
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="topleft">
+      <!-- You can put profile picture or nav items here -->
+    </div>
+  </div>
+  <div class="display">
+    <!-- Main content or image -->
+  </div>
+</body>
+</html>
