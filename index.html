@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio - Devagiri Neeraj Babu</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&display=swap');
         html, body {
             margin: 0;
             padding: 0;
@@ -15,7 +16,7 @@
         body {
             background-color: #000000;
             color : white;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: "Orbitron", sans-serif;
             display: flex ;
             height: 100vh;
         }
@@ -30,8 +31,7 @@
             background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(home_screen.jpg);
             background-size: cover;
             background-position: center;
-            box-shadow: 0px 0px 10px #ff8c00;
-            border-radius: 2%;
+            box-shadow: 0px 0px 10px #7DF9FF;
         }
 
         .topleft {
@@ -47,17 +47,156 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 5px solid #ff8c00;
-            box-shadow: 0px 0px 50px #ff8c00;
+            box-shadow: 0 0 15px #00B2FF, 0 0 30px #00B2FF, 0 0 45px #7DF9FF;
             object-fit: cover;
+            margin-right: 20px;
         }
+
+        .profile_name {
+            font-family: "Orbitron", sans-serif;
+            margin-top: 10px;
+            font-size: 150%;
+            font-weight: 180;
+        }
+
+        .name {
+            display: inline;
+            color: #7DF9FF; 
+            font-weight: 600;
+        }
+
+        .social{
+            display: flex;
+            margin-top: 15px;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+
+        @media (max-width: 768px) {
+           body {
+                  flex-direction: column;
+            }
+          .nav, .display {
+                  width: 100vw;
+            }
+        }
+
+       .circle-wrap {
+            position: relative;
+            display: inline-block;
+            padding: 8px;
+        }
+
+       .contact_img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            z-index: 1;
+            position: relative;
+        }
+
+       .circle-wrap::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border: 2px solid #7DF9FF;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: all 0.3s ease;
+            background-color: #28b0b7;
+        }
+
+        .circle-wrap:hover .contact_img {
+            transform: scale(1.1);
+        }
+
+        .circle-wrap:hover::before {
+            width: 70px;
+            height: 70px;
+            opacity: 1;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 20px 15px 80px;
+            text-decoration: none;
+            color: #cfd3dc;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+            width: 100%;
+            border-radius: 6px;
+        }
+
+        .menu-item img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0.8);
+        }
+
+        .menu-item:hover {
+            color: #7DF9FF;
+        }
+
+        .menu-item:hover img {
+            filter: brightness(1.5) saturate(2);
+        }
+
+        .menu-item.active {
+            color: #00b2ff;
+            font-weight: bold;
+        }
+
+        .menu-item.active img {
+            filter: brightness(2) saturate(2);
+        }
+
     </style>
 </head>
 <body>
     <div class="nav">
         <div class="topleft">
-            <a href="profile_image_1.jpg" target="_top"><img class="p_image" src="profile_image_1.jpg" alt="profile_picture"></a>
+            <a href="profile_image_1.jpg" target="_blank" ><img class="p_image" src="profile_image_1.jpg" alt="profile_picture"></a>
+            <div class="profile_name">Devagiri <span class="name">Neeraj Babu</span></div>
+            <div class="social">
+                <a href="https://www.linkedin.com/in/devagiri-neeraj-babu-512634343" target="_blank" title="LinkedIn" class="circle-wrap" rel="noopener noreferrer"><img src="logo/linkedin_logo.png" alt="LinkedIn page" height="50px" width="50px" class="contact_img" ></a>
+
+                <a href="https://github.com/neerajbabudevagiri" target="_blank" title="Github page" class="circle-wrap" rel="noopener noreferrer"><img src="logo/github_logo.png" alt="Github page" height="50px" width="50px" class="contact_img" ></a>
+
+                <a href="https://www.instagram.com/invites/contact/?igsh=bk11voajqgxb&utm_content=u8hyzag" target="_blank" title="Instagram page" class="circle-wrap" rel="noopener noreferrer"><img src="logo/instagram logo.png" alt="Instagram page" height="50px" width="50px" class="contact_img" ></a>
+
+                <a href="https://www.facebook.com/share/12LHQTVXrzm/?mibextid=qi2Omg" target="_blank" title="Facebook page" class="circle-wrap" rel="noopener noreferrer"><img src="logo/facebook_logo.png" alt="Facebook page" height="50px" width="60px" class="contact_img" ></a>
+
+                <a href="https://leetcode.com/u/Devagiri_Neeraj_Babu/" title="Leetcode page" class="circle-wrap" rel="noopener noreferrer"><img src="logo/leetcode_logo.png" alt="Leetcode page" height="50px" width="50px" class="contact_img"></a>
+            </div>
         </div>
+        <div class="menu">
+              <a href="#" class="menu-item active"><img src="icons/home.svg" alt="Home"> Home</a>
+              <a href="#" class="menu-item"><img src="icons/user.svg" alt="About"> About</a>
+              <a href="#" class="menu-item"><img src="icons/resume.svg" alt="Resume"> Resume</a>
+              <a href="#" class="menu-item"><img src="icons/Skills.svg" alt="Skills"> Skills</a>
+              <a href="#" class="menu-item"><img src="icons/Projects.svg" alt="Projects"> Projects</a>
+              <a href="#" class="menu-item"><img src="icons/Leetscore.svg" alt="Leetscore"> Leetscore</a>
+              <a href="#" class="menu-item"><img src="icons/contact.svg" alt="Contact"> Contact</a>
+        </div>
+
     </div>
     <div class="display">
 
