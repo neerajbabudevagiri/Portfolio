@@ -1,97 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top Left Box</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio - Devagiri Neeraj Babu</title>
   <style>
-    body {
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+    html, body {
       margin: 0;
       padding: 0;
-      background: black;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #000;
       color: white;
-      font-family: 'Segoe UI', sans-serif;
     }
 
+    /* Toggle checkbox hidden */
+    #nav-toggle {
+      display: none;
+    }
+
+    /* Circular Toggle Button */
+    .nav-toggler {
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      width: 50px;
+      height: 50px;
+      background-color: #00b2ff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 0 10px #7DF9FF;
+      transition: left 0.3s ease;
+    }
+
+    .nav-toggler img {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Sidebar */
     .nav {
       width: 25vw;
       height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: start;
-      padding-top: 20px;
+      background-color: #0a0a0a;
+      transition: transform 0.3s ease;
+      position: relative;
+      z-index: 999;
+      padding-top: 80px; /* space for toggle button */
     }
 
+    /* Default state - sidebar hidden */
+    #nav-toggle:not(:checked) ~ .nav {
+      transform: translateX(-100%);
+    }
+
+    /* Move toggle button when open */
+    #nav-toggle:checked + .nav-toggler {
+      left: 25vw;
+    }
+
+    /* Optional: switch icon */
+    #nav-toggle:checked + .nav-toggler img {
+      content: url('icons/close.svg');
+    }
+
+    /* Display Section */
+    .display {
+      width: 75vw;
+      height: 100vh;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('home_screen.jpg');
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0px 0px 10px #7DF9FF;
+      float: right;
+    }
+
+    /* Profile Box */
     .topleft {
-      background: #111;
-      border: 2px solid #00B2FF;
-      box-shadow: 0 0 10px #00B2FF;
       padding: 20px;
       border-radius: 10px;
-      width: 90%;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    .profile-pic {
-      width: 100px;
-      height: 100px;
+    .p_image {
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      border: 3px solid #00B2FF;
+      box-shadow: 0 0 15px #00B2FF, 0 0 30px #00B2FF, 0 0 45px #7DF9FF;
       object-fit: cover;
     }
 
-    .name {
+    .profile_name {
       margin-top: 10px;
-      font-size: 20px;
+      font-size: 150%;
+      font-weight: 180;
+    }
+
+    .name {
+      color: #7DF9FF;
+      font-weight: 600;
+    }
+
+    .social {
+      display: flex;
+      margin-top: 15px;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    .circle-wrap {
+      position: relative;
+      display: inline-block;
+      padding: 8px;
+    }
+
+    .contact_img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      z-index: 1;
+      position: relative;
+    }
+
+    .circle-wrap::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border: 2px solid #7DF9FF;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all 0.3s ease;
+      background-color: #28b0b7;
+    }
+
+    .circle-wrap:hover .contact_img {
+      transform: scale(1.1);
+    }
+
+    .circle-wrap:hover::before {
+      width: 70px;
+      height: 70px;
+      opacity: 1;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 30px;
+      width: 100%;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 20px 15px 60px;
+      text-decoration: none;
+      color: #cfd3dc;
+      font-size: 16px;
+      font-weight: 500;
+      width: 100%;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .menu-item img {
+      width: 20px;
+      height: 20px;
+      filter: brightness(0.8);
+    }
+
+    .menu-item:hover {
+      color: #7DF9FF;
+    }
+
+    .menu-item:hover img {
+      filter: brightness(1.5) saturate(2);
+    }
+
+    .menu-item.active {
+      color: #00b2ff;
       font-weight: bold;
     }
 
-    .socials {
-      margin-top: 15px;
-      display: flex;
-      gap: 12px;
+    .menu-item.active img {
+      filter: brightness(2) saturate(2);
     }
 
-    .socials a {
-      background-color: #222;
-      padding: 8px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      transition: background 0.3s;
+    @media (max-width: 768px) {
+      .nav, .display {
+        width: 100vw;
+      }
+      #nav-toggle:checked + .nav-toggler {
+        left: 100vw;
+      }
     }
 
-    .socials a:hover {
-      background-color: #00B2FF;
-    }
-
-    .socials img {
-      width: 16px;
-      height: 16px;
-    }
+    
   </style>
 </head>
 <body>
 
-  <div class="nav">
+  <!-- Toggle Button -->
+  <input type="checkbox" id="nav-toggle" hidden>
+  <label for="nav-toggle" class="nav-toggler">
+    <img src="icons/menu.svg" alt="Menu" />
+  </label>
+
+  <!-- Sidebar -->
+  <div class="nav" id="sidebar">
     <div class="topleft">
-      <img src="profile_image.jpg" alt="Profile" class="profile-pic">
-      <div class="name">Your Name</div>
-      <div class="socials">
-        <a href="#"><img src="x_icon.png" alt="X"></a>
-        <a href="#"><img src="fb_icon.png" alt="Facebook"></a>
-        <a href="#"><img src="insta_icon.png" alt="Instagram"></a>
-        <a href="#"><img src="skype_icon.png" alt="Skype"></a>
-        <a href="#"><img src="linkedin_icon.png" alt="LinkedIn"></a>
+      <a href="profile_image_1.jpg" target="_blank">
+        <img class="p_image" src="profile_image_1.jpg" alt="profile_picture" />
+      </a>
+      <div class="profile_name">Devagiri <span class="name">Neeraj Babu</span></div>
+      <div class="social">
+        <a href="#" class="circle-wrap"><img src="logo/linkedin_logo.png" class="contact_img"></a>
+        <a href="#" class="circle-wrap"><img src="logo/github_logo.png" class="contact_img"></a>
+        <a href="#" class="circle-wrap"><img src="logo/instagram logo.png" class="contact_img"></a>
+        <a href="#" class="circle-wrap"><img src="logo/facebook_logo.png" class="contact_img"></a>
+        <a href="#" class="circle-wrap"><img src="logo/leetcode_logo.png" class="contact_img"></a>
       </div>
+    </div>
+
+    <div class="menu">
+      <a href="#" class="menu-item active"><img src="icons/home.svg" alt="Home"> Home</a>
+      <a href="#" class="menu-item"><img src="icons/user.svg" alt="About"> About</a>
+      <a href="#" class="menu-item"><img src="icons/resume.svg" alt="Resume"> Resume</a>
+      <a href="#" class="menu-item"><img src="icons/Skills.svg" alt="Skills"> Skills</a>
+      <a href="#" class="menu-item"><img src="icons/Projects.svg" alt="Projects"> Projects</a>
+      <a href="#" class="menu-item"><img src="icons/Leetscore.svg" alt="Leetscore"> Leetscore</a>
+      <a href="#" class="menu-item"><img src="icons/contact.svg" alt="Contact"> Contact</a>
     </div>
   </div>
 
+  <!-- Right Display Section -->
+  <div class="display">
+    <!-- content for homepage -->
+  </div>
 </body>
 </html>
