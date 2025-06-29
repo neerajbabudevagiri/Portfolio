@@ -12,7 +12,9 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -25,6 +27,7 @@
 
         .nav {
             width : 25vw ;
+            /* position: sticky; */
         }
 
         .topleft {
@@ -34,6 +37,7 @@
              display: flex;
              flex-direction: column;
              align-items: center;
+             /* position: sticky; */
         }
         
         .p_image {
@@ -43,6 +47,7 @@
             box-shadow: 0 0 15px #00B2FF, 0 0 30px #00B2FF, 0 0 45px #7DF9FF;
             object-fit: cover;
             margin-right: 20px;
+            cursor: pointer;
         }
 
         .profile_name {
@@ -154,6 +159,8 @@
         .menu-item.active {
             color: #00b2ff;
             font-weight: bold;
+            background-color: rgba(0, 178, 255, 0.1);
+            box-shadow: inset 4px 0 0 #00b2ff;
         }
 
         .menu-item.active img {
@@ -161,13 +168,16 @@
         }
 
         .nav-container {
-            position: relative;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 25vw;
             height: 100vh;
             display: flex;
             flex-direction: row;
-            transition: width 0.5s ease-in-out;
+            transition: transform 0.5s ease-in-out;
             overflow: hidden;
+            z-index: 1000;
         }
 
         .nav {
@@ -189,18 +199,29 @@
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
             cursor: pointer;
-            z-index: 10;
+            z-index: 1100;
             box-shadow: 0 0 10px #00B2FF;
-            transition: transform 0.5s ease-in-out;
+            transition: left 0.5s ease-in-out, 0.5s ease-in-out;
         }
         
 
         .display {
             width: 75vw;
-            box-shadow: 0px 0px 10px #7DF9FF;
-            transition: width 0.5s ease-in-out 0.1s;
-            display: flex;
+            height: 100vh;
+            box-shadow: 0px 0px 10px #00B2FF;
+            transition: all 0.5s ease-in-out 0.1s;
+            display: block;
             align-items: stretch;
+            flex-direction: column;
+            margin-left: 25vw;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+        }
+
+        .display::-webkit-scrollbar{
+            display: none;
         }
 
         #nav-toggle:checked ~ .nav {
@@ -211,6 +232,7 @@
         }
 
         #nav-toggle:checked ~ .display {
+            margin-left: 0;
             width: 100vw;
         }
 
@@ -242,7 +264,7 @@
         }
 
         #nav-toggle:checked ~ .nav-container {
-             width: 0;
+             transform: translateX(-100%);
         }
 
         #nav-toggle:checked ~ .nav-container .nav {
@@ -331,11 +353,158 @@
             white-space: nowrap;
           }
 
+        .contact_card{
+            height: 100vh;
+            width: 75vw;
+            background-color: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow: visible;
+            position: relative;
+            z-index: 0;
+        }
 
+        .contact_blue{
+            font-family: orbitron;
+            margin-top: -5vh;
+            color: #00B2FF;
+        }
 
+        .card-wrapper{
+            position: relative;
+            width: 70%;
+            height: 70%;
+        }
+
+        .card{
+            width: 100%;
+            height: 100%;
+            border-radius: 10%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #000000;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .card-content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            text-align: center;
+        }
+
+        .social1{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+       /* @property --angle{
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        } */
+
+        .contactbackground{
+            --angle: 0deg;
+            width: calc(100% + 16px);
+            height: calc(100% + 16px);
+            border-radius: 10%;
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            z-index: 0;
+            background-image: conic-gradient(from var(--angle),transparent 50%, #00B2FF);
+            animation: 3s spin linear infinite;
+        }
+
+        @keyframes spin{
+            from{
+                --angle: 0deg;
+            }
+            to{
+                --angle: 360deg;
+            }
+        }
+
+        .contact-info{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .info-block{
+            text-align: center;
+            min-width: 200px;
+            padding: 10px;
+        }
+
+        .contact-white{
+            color: #ffffff;
+            font-family: 'Montserrat',sans-serif;
+            font-size: 1rem;
+        }
+        
+        #nav-toggle:checked ~ .display #contactpage {
+            width: 100vw;
+            margin-left: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .aboutpage{
+            height: 100%;
+            width: 100%;
+            background-color: #00B2FF;
+        }
     </style>
 </head>
 <body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const sections = document.querySelectorAll('.display > div[id]');
+          const navLinks = document.querySelectorAll('.menu-item');
+        
+          const options = {
+            root: document.querySelector('.display'), 
+            rootMargin: '0px',
+            threshold: 0.4 
+          };
+        
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              const id = entry.target.getAttribute('id');
+              const link = document.querySelector(`.menu-item[data-link="${id}"]`);
+              console.log(`${id} is intersecting: ${entry.isIntersecting}`); 
+        
+              if (entry.isIntersecting) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                if (link) {
+                  link.classList.add('active');
+                }
+              }
+            });
+          }, options);
+        
+          sections.forEach(section => {
+            observer.observe(section);
+          });
+        });
+    </script>
+
+    
     <input type="checkbox" id="nav-toggle" hidden>
     <label for="nav-toggle" class="nav-arrow">&#10094;</label>
 
@@ -357,28 +526,68 @@
                 </div>
             </div>
             <div class="menu">
-                  <a href=".homepage" class="menu-item active"><img src="icons/home.svg" alt="Home"> Home</a>
-                  <a href="#" class="menu-item"><img src="icons/user.svg" alt="About"> About</a>
+                  <a href="#homepage" class="menu-item" data-link="homepage"><img src="icons/home.svg" alt="Home"> Home</a>
+                  <a href="#aboutpage" class="menu-item" data-link="aboutpage"><img src="icons/user.svg" alt="About"> About</a>
                   <a href="#" class="menu-item"><img src="icons/resume.svg" alt="Resume"> Resume</a>
                   <a href="#" class="menu-item"><img src="icons/Skills.svg" alt="Skills"> Skills</a>
                   <a href="#" class="menu-item"><img src="icons/Projects.svg" alt="Projects"> Projects</a>
                   <a href="#" class="menu-item"><img src="icons/Leetscore.svg" alt="Leetscore"> Leetscore</a>
-                  <a href="#" class="menu-item"><img src="icons/contact.svg" alt="Contact"> Contact</a>
+                  <a href="#contactpage" class="menu-item" data-link="contactpage"><img src="icons/contact.svg" alt="Contact"> Contact</a>
             </div>
 
         </div>
         
     </div>
     <div class="display">
-        <div class="homepage">
+
+        <div id="homepage" class="homepage">
             <h1 class="home_title"><u>D. <span class="highlighted">Neeraj&nbsp;Babu</span></u></h1>
             <div class="home_subtitle subtitle-flex">
                 <div class="line line1">🎓 Computer Science Undergraduate @ NIT Delhi</div>
-                <!-- <div class="vertical-line"></div> -->
                 <div class="line line2">💻 Full-Stack Developer</div>
             </div>
+        </div>
+
+        <div id="aboutpage" class="aboutpage">
 
         </div>
+
+        <div id="contactpage" class="contact_card" >
+            <h1 class="contact_blue">Contact Me</h1> 
+             <div class="card-wrapper">
+                <div class="contactbackground"></div>
+                <div class="card">    
+                    <div class="card-content">
+                    <h2 class="contact_blue">Let's Connect & Collaborate</h2>    
+                    <p class="contact_white">Feel free to reach out for collaborations, project discussions, or just to say hi!</p>
+
+                      <div class="contact-info">
+                        <div class="info-block">
+                          <h3 class="contact_blue">📧 Email</h3>
+                          <p class="email contact_white">231210037@nitdelhi.ac.in</p>
+                        </div>
+                        <div class="info-block">
+                          <h3 class="contact_blue">📍 Address</h3>
+                          <p class="email contact_white">National Institute of Technology, Delhi Plot No. FA7, Zone P1, GT Karnal Road, Delhi-110036.</p>
+                        </div>
+                      </div>
+
+                    <div class="social social1">
+                    <a href="https://www.linkedin.com/in/devagiri-neeraj-babu-512634343" target="_blank" title="LinkedIn" class="circle-wrap" rel="noopener noreferrer"><img src="logo/linkedin_logo.png" alt="LinkedIn page" height="50px" width="50px" class="contact_img" ></a>
+
+                    <a href="https://github.com/neerajbabudevagiri" target="_blank" title="Github page" class="circle-wrap" rel="noopener noreferrer"><img src="logo/github_logo.png" alt="Github page" height="50px" width="50px" class="contact_img" ></a>
+
+                    <a href="https://www.instagram.com/invites/contact/?igsh=bk11voajqgxb&utm_content=u8hyzag" target="_blank" title="Instagram page" class="circle-wrap" rel="noopener noreferrer"><img src="logo/instagram logo.png" alt="Instagram page" height="50px" width="50px" class="contact_img" ></a>
+
+                    <a href="https://www.facebook.com/share/12LHQTVXrzm/?mibextid=qi2Omg" target="_blank" title="Facebook page" class="circle-wrap" rel="noopener noreferrer"><img src="logo/facebook_logo.png" alt="Facebook page" height="50px" width="60px" class="contact_img" ></a>
+
+                    <a href="https://leetcode.com/u/Devagiri_Neeraj_Babu/" title="Leetcode page" class="circle-wrap" rel="noopener noreferrer"><img src="logo/leetcode_logo.png" alt="Leetcode page" height="50px" width="50px" class="contact_img"></a>
+                    </div>
+                </div>
+                </div>
+             </div>
+        </div>
+
     </div>
     
 </body>
