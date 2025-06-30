@@ -715,7 +715,6 @@
 
         .more-text {
             color: #00B2FF;
-            font-weight: bold;
             cursor: pointer;
         }
 
@@ -752,6 +751,21 @@
             .project-card {
                 width: 90%;
             }
+        }
+
+        .hidden-text {
+            display: none;
+            color: #cfd3dc;
+        }
+
+        .hidden-text.show {
+            display: inline;
+        }
+
+        .toggle-more {
+            color: #00B2FF;
+            font-weight: bold;
+            cursor: pointer;
         }
 
         /* @property --angle{
@@ -793,6 +807,22 @@
                 observer.observe(section);
             });
         });
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggles = document.querySelectorAll('.toggle-more');
+
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const hiddenText = toggle.previousElementSibling;
+                    const isVisible = hiddenText.classList.toggle('show');
+
+                    toggle.textContent = isVisible ? ' Show Less' : ' Show More';
+                });
+            });
+        });
+
+
     </script>
 
 
@@ -962,81 +992,83 @@
             <h1 class="orbitfont head project-head">Projects</h1>
 
             <div class="project-wrapper">
-                    <div class="project-card">
-                    <img src="project_images/sample.png" alt="Project Image">
+                <div class="project-card">
+                    <img src="portfolio_project1.jpg" alt="Project Image">
                     <h2 class="project-title">Project Title</h2>
                     <div class="tech-tags">
                         <span class="tag">HTML</span>
                         <span class="tag">CSS</span>
                         <span class="tag">JavaScript</span>
-                        <span class="tag">MySQL</span>
-                        <span class="tag">PHP</span>
+                        <span class="tag">Git</span>
                     </div>
                     <p class="project-desc">
-                        🚀 A short project description goes here. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae praesentium sapiente est. Animi ducimus error, perferendis nisi sit odit aut, reprehenderit cumque, ea quae eos amet obcaecati. Odit facere commodi laudantium perspiciatis in quod  <span class="more-text">Show More</span>
+                        🧑‍💻 A fully responsive personal portfolio built using above
+                        <span class="more-text hidden-text"> mentioned languages and tools showcasing my projects, skills, and contact info — with a custom dark theme, dynamic sections, and animated transitions.</span>
+                        <span class="toggle-more"> Show More</span>
                     </p>
+
                     <div class="project-links">
-                        <a href="#" class="btn"><i class="fas fa-code"></i> Code</a>
+                        <a href="https://github.com/neerajbabudevagiri/Portfolio/tree/main" class="btn" target="_blank"><i class="fas fa-code"></i> Code</a>
                         <a href="#" class="btn"><i class="fas fa-external-link-alt"></i> Live</a>
                     </div>
+                </div>
+
+
             </div>
-
-
         </div>
-    </div>
 
 
 
-    <div id="contactpage" class="contact_card">
-        <h1 class="contact_blue">Contact Me</h1>
-        <div class="card-wrapper">
-            <div class="contactbackground"></div>
-            <div class="card">
-                <div class="card-content">
-                    <h2 class="contact_blue">Let's Connect & Collaborate</h2>
-                    <p class="contact_white">Feel free to reach out for collaborations, project discussions, or just
-                        to say hi!</p>
+        <div id="contactpage" class="contact_card">
+            <h1 class="contact_blue">Contact Me</h1>
+            <div class="card-wrapper">
+                <div class="contactbackground"></div>
+                <div class="card">
+                    <div class="card-content">
+                        <h2 class="contact_blue">Let's Connect & Collaborate</h2>
+                        <p class="contact_white">Feel free to reach out for collaborations, project discussions, or just
+                            to say hi!</p>
 
-                    <div class="contact-info">
-                        <div class="info-block">
-                            <h3 class="contact_blue">📧 Email</h3>
-                            <p class="email contact_white">231210037@nitdelhi.ac.in</p>
+                        <div class="contact-info">
+                            <div class="info-block">
+                                <h3 class="contact_blue">📧 Email</h3>
+                                <p class="email contact_white">231210037@nitdelhi.ac.in</p>
+                            </div>
+                            <div class="info-block">
+                                <h3 class="contact_blue">📍 Address</h3>
+                                <p class="email contact_white">National Institute of Technology, Delhi Plot No. FA7,
+                                    Zone P1, GT Karnal Road, Delhi-110036.</p>
+                            </div>
                         </div>
-                        <div class="info-block">
-                            <h3 class="contact_blue">📍 Address</h3>
-                            <p class="email contact_white">National Institute of Technology, Delhi Plot No. FA7,
-                                Zone P1, GT Karnal Road, Delhi-110036.</p>
+
+                        <div class="social social1">
+                            <a href="https://www.linkedin.com/in/devagiri-neeraj-babu-512634343" target="_blank"
+                                title="LinkedIn" class="circle-wrap" rel="noopener noreferrer"><img
+                                    src="logo/linkedin_logo.png" alt="LinkedIn page" height="50px" width="50px"
+                                    class="contact_img"></a>
+
+                            <a href="https://github.com/neerajbabudevagiri" target="_blank" title="Github page"
+                                class="circle-wrap" rel="noopener noreferrer"><img src="logo/github_logo.png"
+                                    alt="Github page" height="50px" width="50px" class="contact_img"></a>
+
+                            <a href="https://www.instagram.com/invites/contact/?igsh=bk11voajqgxb&utm_content=u8hyzag"
+                                target="_blank" title="Instagram page" class="circle-wrap"
+                                rel="noopener noreferrer"><img src="logo/instagram logo.png" alt="Instagram page"
+                                    height="50px" width="50px" class="contact_img"></a>
+
+                            <a href="https://www.facebook.com/share/12LHQTVXrzm/?mibextid=qi2Omg" target="_blank"
+                                title="Facebook page" class="circle-wrap" rel="noopener noreferrer"><img
+                                    src="logo/facebook_logo.png" alt="Facebook page" height="50px" width="60px"
+                                    class="contact_img"></a>
+
+                            <a href="https://leetcode.com/u/Devagiri_Neeraj_Babu/" title="Leetcode page"
+                                class="circle-wrap" rel="noopener noreferrer"><img src="logo/leetcode_logo.png"
+                                    alt="Leetcode page" height="50px" width="50px" class="contact_img"></a>
                         </div>
-                    </div>
-
-                    <div class="social social1">
-                        <a href="https://www.linkedin.com/in/devagiri-neeraj-babu-512634343" target="_blank"
-                            title="LinkedIn" class="circle-wrap" rel="noopener noreferrer"><img
-                                src="logo/linkedin_logo.png" alt="LinkedIn page" height="50px" width="50px"
-                                class="contact_img"></a>
-
-                        <a href="https://github.com/neerajbabudevagiri" target="_blank" title="Github page"
-                            class="circle-wrap" rel="noopener noreferrer"><img src="logo/github_logo.png"
-                                alt="Github page" height="50px" width="50px" class="contact_img"></a>
-
-                        <a href="https://www.instagram.com/invites/contact/?igsh=bk11voajqgxb&utm_content=u8hyzag"
-                            target="_blank" title="Instagram page" class="circle-wrap" rel="noopener noreferrer"><img
-                                src="logo/instagram logo.png" alt="Instagram page" height="50px" width="50px"
-                                class="contact_img"></a>
-
-                        <a href="https://www.facebook.com/share/12LHQTVXrzm/?mibextid=qi2Omg" target="_blank"
-                            title="Facebook page" class="circle-wrap" rel="noopener noreferrer"><img
-                                src="logo/facebook_logo.png" alt="Facebook page" height="50px" width="60px"
-                                class="contact_img"></a>
-
-                        <a href="https://leetcode.com/u/Devagiri_Neeraj_Babu/" title="Leetcode page" class="circle-wrap"
-                            rel="noopener noreferrer"><img src="logo/leetcode_logo.png" alt="Leetcode page"
-                                height="50px" width="50px" class="contact_img"></a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
     </div>
 
