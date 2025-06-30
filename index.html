@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio - Devagiri Neeraj Babu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-        html, body {
+        html,
+        body {
             margin: 0;
             padding: 0;
             height: 100%;
@@ -19,27 +22,25 @@
 
         body {
             background-color: #000000;
-            color : white;
+            color: white;
             font-family: "Montserrat", sans-serif;
-            display: flex ;
+            display: flex;
             height: 100vh;
         }
 
         .nav {
-            width : 25vw ;
-            /* position: sticky; */
+            width: 25vw;
         }
 
         .topleft {
-             padding: 20px;
-             border-radius: 10px;
-             width: 90%;
-             display: flex;
-             flex-direction: column;
-             align-items: center;
-             /* position: sticky; */
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        
+
         .p_image {
             width: 150px;
             height: 150px;
@@ -59,11 +60,11 @@
 
         .name {
             display: inline;
-            color: #7DF9FF; 
+            color: #7DF9FF;
             font-weight: 600;
         }
 
-        .social{
+        .social {
             display: flex;
             margin-top: 15px;
             justify-content: space-evenly;
@@ -72,21 +73,23 @@
 
 
         @media (max-width: 768px) {
-           body {
-                  flex-direction: column;
+            body {
+                flex-direction: column;
             }
-          .nav, .display {
-                  width: 100vw;
+
+            .nav,
+            .display {
+                width: 100vw;
             }
         }
 
-       .circle-wrap {
+        .circle-wrap {
             position: relative;
             display: inline-block;
             padding: 8px;
         }
 
-       .contact_img {
+        .contact_img {
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -95,7 +98,7 @@
             position: relative;
         }
 
-       .circle-wrap::before {
+        .circle-wrap::before {
             content: "";
             position: absolute;
             top: 50%;
@@ -181,12 +184,12 @@
         }
 
         .nav {
-             width: 100%;
-             min-width: 0; 
-             transition: transform 0.5s ease-in-out;
-             z-index: 1;
+            width: 100%;
+            min-width: 0;
+            transition: transform 0.5s ease-in-out;
+            z-index: 1;
         }
-        
+
         .nav-arrow {
             position: fixed;
             top: 50%;
@@ -203,7 +206,7 @@
             box-shadow: 0 0 10px #00B2FF;
             transition: left 0.5s ease-in-out, 0.5s ease-in-out;
         }
-        
+
 
         .display {
             width: 75vw;
@@ -215,42 +218,43 @@
             flex-direction: column;
             margin-left: 25vw;
             overflow-y: scroll;
+            overflow-x: hidden;
             scrollbar-width: none;
             scroll-behavior: smooth;
             -ms-overflow-style: none;
         }
 
-        .display::-webkit-scrollbar{
+        .display::-webkit-scrollbar {
             display: none;
         }
 
-        #nav-toggle:checked ~ .nav {
+        #nav-toggle:checked~.nav {
             transform: translateX(-100%);
             position: absolute;
             top: 0;
             left: 0;
         }
 
-        #nav-toggle:checked ~ .display {
+        #nav-toggle:checked~.display {
             margin-left: 0;
             width: 100vw;
         }
 
-        #nav-toggle:checked + .nav-arrow {
+        #nav-toggle:checked+.nav-arrow {
             left: 0;
-            transform: translateY(-50%) rotate(180deg); 
+            transform: translateY(-50%) rotate(180deg);
         }
 
 
         .homepage {
             width: 100%;
-            height: 100%;            
+            height: 100%;
             background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('home_screen.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             opacity: 1;
-            transition: opacity 0.5s ease-in-out 0.6s; 
+            transition: opacity 0.5s ease-in-out 0.6s;
             opacity: 1;
             transition: opacity 0.3s ease-in-out 0.3s;
             position: relative;
@@ -259,24 +263,24 @@
             align-items: end;
         }
 
-        #nav-toggle:checked ~ .display .homepage {
+        #nav-toggle:checked~.display .homepage {
             opacity: 1;
         }
 
-        #nav-toggle:checked ~ .nav-container {
-             transform: translateX(-100%);
+        #nav-toggle:checked~.nav-container {
+            transform: translateX(-100%);
         }
 
-        #nav-toggle:checked ~ .nav-container .nav {
+        #nav-toggle:checked~.nav-container .nav {
             transform: translateX(-100%);
             visibility: hidden;
         }
 
-       #nav-toggle:checked ~ .nav-container .nav-arrow {
+        #nav-toggle:checked~.nav-container .nav-arrow {
             transform: translateY(-50%) rotate(180deg);
         }
 
-        .home_title{
+        .home_title {
             font-family: 'Poppins', sans-serif;
             font-size: clamp(1rem, 4vw, 3rem);
             font-weight: 600;
@@ -289,7 +293,7 @@
             -webkit-background-clip: text;
             white-space: nowrap;
             overflow: hidden;
-            text-overflow: ellipsis; 
+            text-overflow: ellipsis;
         }
 
         .highlighted {
@@ -302,6 +306,7 @@
                 opacity: 0;
                 transform: translateY(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -315,7 +320,7 @@
             line-height: 1.6;
             font-family: 'Poppins', sans-serif;
             margin-top: -50px;
-            }
+        }
 
         .line {
             white-space: nowrap;
@@ -323,21 +328,33 @@
             width: 0;
             animation: typing 3s steps(40, end) forwards, blink 0.7s step-end infinite;
             overflow: hidden;
+        }
+
+        .line2 {
+            animation-delay: 3.5s;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
             }
 
-            .line2 {
-                animation-delay: 3.5s;
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                border-color: transparent;
             }
 
-            @keyframes typing {
-                from { width: 0; }
-                to { width: 100%; }
+            50% {
+                border-color: #7DF9FF;
             }
-
-            @keyframes blink {
-                0%, 100% { border-color: transparent; }
-                50% { border-color: #7DF9FF; }
-            }
+        }
 
         .subtitle-flex {
             display: flex;
@@ -351,9 +368,9 @@
             display: block;
             text-align: center;
             white-space: nowrap;
-          }
+        }
 
-        .contact_card{
+        .contact_card {
             height: 100vh;
             width: 75vw;
             background-color: #000000;
@@ -366,19 +383,19 @@
             z-index: 0;
         }
 
-        .contact_blue{
+        .contact_blue {
             font-family: orbitron;
             margin-top: -5vh;
             color: #00B2FF;
         }
 
-        .card-wrapper{
+        .card-wrapper {
             position: relative;
             width: 70%;
             height: 70%;
         }
 
-        .card{
+        .card {
             width: 100%;
             height: 100%;
             border-radius: 10%;
@@ -393,7 +410,7 @@
             flex-direction: column;
         }
 
-        .card-content{
+        .card-content {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -401,20 +418,14 @@
             text-align: center;
         }
 
-        .social1{
+        .social1 {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 20px;
         }
 
-       /* @property --angle{
-            syntax: "<angle>";
-            initial-value: 0deg;
-            inherits: false;
-        } */
-
-        .contactbackground{
+        .contactbackground {
             --angle: 0deg;
             width: calc(100% + 16px);
             height: calc(100% + 16px);
@@ -423,21 +434,22 @@
             top: -8px;
             left: -8px;
             z-index: 0;
-            background-image: conic-gradient(from var(--angle),transparent 50%, #00B2FF);
+            background-image: conic-gradient(from var(--angle), transparent 50%, #00B2FF, #0095ff, blue);
             animation: 3s spin linear infinite;
         }
 
-        @keyframes spin{
-            from{
+        @keyframes spin {
+            from {
                 --angle: 0deg;
             }
-            to{
+
+            to {
                 --angle: 360deg;
             }
         }
 
-        .contact-info{
-            display:flex;
+        .contact-info {
+            display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 40px;
@@ -445,99 +457,397 @@
             width: 100%;
         }
 
-        .info-block{
+        .info-block {
             text-align: center;
             min-width: 200px;
             padding: 10px;
         }
 
-        .contact-white{
+        .contact-white {
             color: #ffffff;
-            font-family: 'Montserrat',sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
         }
-        
-        #nav-toggle:checked ~ .display #contactpage {
+
+        #nav-toggle:checked~.display #contactpage {
             width: 100vw;
             margin-left: 0;
             align-items: center;
             justify-content: center;
         }
 
-        .aboutpage{
+        .aboutpage {
             height: 100%;
             width: 100%;
-            background-color: #00B2FF;
+            background-color: #FFFFFF;
+            color: #000;
         }
+
+        .orbit_font {
+            font-family: 'orbitron';
+        }
+
+        .head {
+            position: relative;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .head::after {
+            content: '';
+            height: 8px;
+            width: 14%;
+            position: absolute;
+            background-image: linear-gradient(to right, transparent, #00B2F2, #0095ff, blue, black);
+            left: 12px;
+            bottom: 32px;
+            border-radius: 50%;
+        }
+
+        .about_content {
+            padding: 5%;
+            gap: 2%;
+            font-size: 20px;
+            line-height: 25px;
+        }
+
+        .content_highlight {
+            color: #00B2F2;
+            font-weight: bold;
+        }
+
+        .about_image {
+            float: right;
+            height: 25vh;
+            width: 14vw;
+            object-fit: cover;
+            object-position: top;
+            margin: 10px;
+            border: 2px solid #00B2F2;
+        }
+
+        .about_image:hover {
+            box-shadow: 0px 0px 15px #00B2F2;
+        }
+
+        .skillpage {
+            width: 100%;
+            background-color: inherit;
+            display: flex;
+            gap: 1%;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            padding: 10px 10px;
+        }
+
+        .skills-wrapper {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skillclasses {
+            width: 30%;
+            min-width: 250px;
+            background: linear-gradient(145deg, #0b0b0b, #151515);
+            border: 1px solid rgba(0, 178, 255, 0.2);
+            border-radius: 18px;
+            padding: 15px;
+            margin: 10px;
+            box-shadow: 0 4px 15px rgba(0, 178, 255, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skillclasses:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 178, 255, 0.25);
+        }
+
+        .skillclasses h2 {
+            font-family: "Orbitron", sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #00B2FF;
+            border-bottom: 2px solid rgba(0, 178, 255, 0.4);
+            padding-bottom: 8px;
+        }
+
+        .skillclasses h3 {
+            color: #7DF9FF;
+            font-size: 1.1rem;
+            margin: 12px 0 6px;
+        }
+
+        .skillclasses ul {
+            padding-left: 20px;
+            list-style-type: square;
+        }
+
+        .skillclasses ul li {
+            color: #cfd3dc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .skillpage {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skillclasses {
+                width: 90%;
+            }
+        }
+
+        .skillclasses h2 i,
+        .skillclasses h3 i,
+        .skillclasses ul li i {
+            margin-right: 8px;
+            color: #00B2FF;
+            min-width: 20px;
+        }
+
+        .skillhead::after {
+            content: '';
+            height: 8px;
+            width: 100%;
+            position: absolute;
+            background-image: linear-gradient(to right, transparent, #00B2F2, #0095ff, blue, black);
+            left: 12px;
+            bottom: 32px;
+            border-radius: 50%;
+        }
+
+        .project-section {
+            width: 100%;
+            background-color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1%;
+            gap: 20px;
+        }
+
+        .project-head::after {
+            content: '';
+            height: 8px;
+            width: 100%;
+            position: absolute;
+            background-image: linear-gradient(to right, transparent, #00B2F2, #0095ff, blue, black);
+            left: 12px;
+            bottom: 32px;
+            border-radius: 50%;
+        }
+
+        .project-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .project-card {
+            background: linear-gradient(145deg, #0b0b0b, #151515);
+            border: 1px solid rgba(0, 178, 255, 0.2);
+            border-radius: 18px;
+            box-shadow: 0 4px 15px rgba(0, 178, 255, 0.15);
+            padding: 20px;
+            width: 320px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0, 178, 255, 0.25);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 0 10px rgba(0, 178, 255, 0.3);
+        }
+
+        .project-title {
+            color: #7DF9FF;
+            font-size: 1.3rem;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            background-color: rgba(0, 178, 255, 0.1);
+            border: 1px solid #00B2FF;
+            color: #00B2FF;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-desc {
+            color: #cfd3dc;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .more-text {
+            color: #00B2FF;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: auto;
+        }
+
+        .project-links .btn {
+            background-color: rgba(0, 178, 255, 0.1);
+            border: 1px solid #00B2FF;
+            color: #00B2FF;
+            padding: 8px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .project-links .btn:hover {
+            background-color: #00B2FF;
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            .project-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project-card {
+                width: 90%;
+            }
+        }
+
+        /* @property --angle{
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        } */
     </style>
 </head>
+
 <body>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-          const sections = document.querySelectorAll('.display > div[id]');
-          const navLinks = document.querySelectorAll('.menu-item');
-        
-          const options = {
-            root: document.querySelector('.display'), 
-            rootMargin: '0px',
-            threshold: 0.4 
-          };
-        
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              const id = entry.target.getAttribute('id');
-              const link = document.querySelector(`.menu-item[data-link="${id}"]`);
-              console.log(`${id} is intersecting: ${entry.isIntersecting}`); 
-        
-              if (entry.isIntersecting) {
-                navLinks.forEach(link => link.classList.remove('active'));
-                if (link) {
-                  link.classList.add('active');
-                }
-              }
+            const sections = document.querySelectorAll('.display > div[id]');
+            const navLinks = document.querySelectorAll('.menu-item');
+
+            const options = {
+                root: document.querySelector('.display'),
+                rootMargin: '0px',
+                threshold: 0.4
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const id = entry.target.getAttribute('id');
+                    const link = document.querySelector(`.menu-item[data-link="${id}"]`);
+                    console.log(`${id} is intersecting: ${entry.isIntersecting}`);
+
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        if (link) {
+                            link.classList.add('active');
+                        }
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
             });
-          }, options);
-        
-          sections.forEach(section => {
-            observer.observe(section);
-          });
         });
     </script>
 
-    
+
     <input type="checkbox" id="nav-toggle" hidden>
     <label for="nav-toggle" class="nav-arrow">&#10094;</label>
 
     <div class="nav-container">
-            <div class="nav">
+        <div class="nav">
             <div class="topleft">
-                <a href="profile_image_1.jpg" target="_blank" ><img class="p_image" src="profile_image_1.jpg" alt="profile_picture"></a>
+                <a href="profile_image_1.jpg" target="_blank"><img class="p_image" src="profile_image_1.jpg"
+                        alt="profile_picture"></a>
                 <div class="profile_name">Devagiri <span class="name">Neeraj Babu</span></div>
                 <div class="social">
-                    <a href="https://www.linkedin.com/in/devagiri-neeraj-babu-512634343" target="_blank" title="LinkedIn" class="circle-wrap" rel="noopener noreferrer"><img src="logo/linkedin_logo.png" alt="LinkedIn page" height="50px" width="50px" class="contact_img" ></a>
+                    <a href="https://www.linkedin.com/in/devagiri-neeraj-babu-512634343" target="_blank"
+                        title="LinkedIn" class="circle-wrap" rel="noopener noreferrer"><img src="logo/linkedin_logo.png"
+                            alt="LinkedIn page" height="50px" width="50px" class="contact_img"></a>
 
-                    <a href="https://github.com/neerajbabudevagiri" target="_blank" title="Github page" class="circle-wrap" rel="noopener noreferrer"><img src="logo/github_logo.png" alt="Github page" height="50px" width="50px" class="contact_img" ></a>
+                    <a href="https://github.com/neerajbabudevagiri" target="_blank" title="Github page"
+                        class="circle-wrap" rel="noopener noreferrer"><img src="logo/github_logo.png" alt="Github page"
+                            height="50px" width="50px" class="contact_img"></a>
 
-                    <a href="https://www.instagram.com/invites/contact/?igsh=bk11voajqgxb&utm_content=u8hyzag" target="_blank" title="Instagram page" class="circle-wrap" rel="noopener noreferrer"><img src="logo/instagram logo.png" alt="Instagram page" height="50px" width="50px" class="contact_img" ></a>
+                    <a href="https://www.instagram.com/invites/contact/?igsh=bk11voajqgxb&utm_content=u8hyzag"
+                        target="_blank" title="Instagram page" class="circle-wrap" rel="noopener noreferrer"><img
+                            src="logo/instagram logo.png" alt="Instagram page" height="50px" width="50px"
+                            class="contact_img"></a>
 
-                    <a href="https://www.facebook.com/share/12LHQTVXrzm/?mibextid=qi2Omg" target="_blank" title="Facebook page" class="circle-wrap" rel="noopener noreferrer"><img src="logo/facebook_logo.png" alt="Facebook page" height="50px" width="60px" class="contact_img" ></a>
+                    <a href="https://www.facebook.com/share/12LHQTVXrzm/?mibextid=qi2Omg" target="_blank"
+                        title="Facebook page" class="circle-wrap" rel="noopener noreferrer"><img
+                            src="logo/facebook_logo.png" alt="Facebook page" height="50px" width="60px"
+                            class="contact_img"></a>
 
-                    <a href="https://leetcode.com/u/Devagiri_Neeraj_Babu/" title="Leetcode page" class="circle-wrap" rel="noopener noreferrer"><img src="logo/leetcode_logo.png" alt="Leetcode page" height="50px" width="50px" class="contact_img"></a>
+                    <a href="https://leetcode.com/u/Devagiri_Neeraj_Babu/" title="Leetcode page" class="circle-wrap"
+                        rel="noopener noreferrer"><img src="logo/leetcode_logo.png" alt="Leetcode page" height="50px"
+                            width="50px" class="contact_img"></a>
                 </div>
             </div>
             <div class="menu">
-                  <a href="#homepage" class="menu-item" data-link="homepage"><img src="icons/home.svg" alt="Home"> Home</a>
-                  <a href="#aboutpage" class="menu-item" data-link="aboutpage"><img src="icons/user.svg" alt="About"> About</a>
-                  <a href="#" class="menu-item"><img src="icons/resume.svg" alt="Resume"> Resume</a>
-                  <a href="#" class="menu-item"><img src="icons/Skills.svg" alt="Skills"> Skills</a>
-                  <a href="#" class="menu-item"><img src="icons/Projects.svg" alt="Projects"> Projects</a>
-                  <a href="#" class="menu-item"><img src="icons/Leetscore.svg" alt="Leetscore"> Leetscore</a>
-                  <a href="#contactpage" class="menu-item" data-link="contactpage"><img src="icons/contact.svg" alt="Contact"> Contact</a>
+                <a href="#homepage" class="menu-item" data-link="homepage"><img src="icons/home.svg" alt="Home">
+                    Home</a>
+                <a href="#aboutpage" class="menu-item" data-link="aboutpage"><img src="icons/user.svg" alt="About">
+                    About</a>
+                <a href="#" class="menu-item"><img src="icons/resume.svg" alt="Resume"> Resume</a>
+                <a href="#skillpage" class="menu-item" data-link="skillpage"><img src="icons/Skills.svg" alt="Skills">
+                    Skills</a>
+                <a href="#projectpage" class="menu-item" data-link="projectpage"><img src="icons/Projects.svg"
+                        alt="Projects"> Projects</a>
+                <a href="#" class="menu-item"><img src="icons/Leetscore.svg" alt="Leetscore"> Leetscore</a>
+                <a href="#contactpage" class="menu-item" data-link="contactpage"><img src="icons/contact.svg"
+                        alt="Contact"> Contact</a>
             </div>
 
         </div>
-        
+
     </div>
+
     <div class="display">
 
         <div id="homepage" class="homepage">
@@ -549,46 +859,187 @@
         </div>
 
         <div id="aboutpage" class="aboutpage">
-
+            <h1 class="orbitfont head">About</h1>
+            <div class="about_content">
+                <img class="about_image" src="image.jpg" alt="my_image">
+                <p class="para1">I am a <span class="content_highlight ">Computer Science and Engineering undergraduate
+                        at NIT Delhi (2023–2027)</span>, currently in my 3rd year with a CGPA of 7.8. During my role as
+                    <span class="content_highlight">Full Stack Intern and training at Krutanic</span>, I worked on
+                    dynamic web applications using <u>React.js, Node.js, MongoDB, MySQL, HTML, CSS, and JavaScript</u>.
+                    While I enjoy frontend design, I also maintain a strong backend understanding. Alongside web
+                    development, I have a solid grasp of software tools and version control system like Git and GitHub.
+                </p>
+                <p class="para2">I take a keen interest in <u>Data Structures and Algorithms (DSA)</u>, consistently
+                    practicing to improve my problem-solving and analytical skills. In parallel, I actively explore the
+                    field of Natural Language Processing (NLP) and its potential in AI-driven applications. I believe in
+                    continuous learning and aim to contribute meaningfully to projects that blend innovation with
+                    real-world impact.</p>
+                <p class="para3">Outside academics, I enjoy outdoor sports like badminton and football, and indoor
+                    activities like chess and solving logic-based puzzles, which sharpen my strategic thinking. A
+                    passionate music lover, I find creative balance through rhythm. Known for my communication skills,
+                    adaptability, and a strong sense of collaboration, I believe in both individual excellence and team
+                    growth, while staying grounded in lifelong learning. I’m fluent in Telugu, Hindi, and English.</p>
+            </div>
         </div>
 
-        <div id="contactpage" class="contact_card" >
-            <h1 class="contact_blue">Contact Me</h1> 
-             <div class="card-wrapper">
-                <div class="contactbackground"></div>
-                <div class="card">    
-                    <div class="card-content">
-                    <h2 class="contact_blue">Let's Connect & Collaborate</h2>    
-                    <p class="contact_white">Feel free to reach out for collaborations, project discussions, or just to say hi!</p>
+        <div class="skillpage" id="skillpage">
+            <h1 class="orbitfont head skillhead">Skills</h1>
 
-                      <div class="contact-info">
+            <div class="skills-wrapper">
+                <div class="skillclasses">
+                    <h2><i class="fas fa-laptop-code"></i> Full Stack</h2>
+                    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px;">
+
+                        <div style="flex: 1 1 48%;">
+                            <h3 style="margin-bottom: 5px;"><i class="fas fa-paint-brush"></i> Frontend</h3>
+                            <ul style="margin: 0;">
+                                <li><i class="fab fa-html5"></i> HTML</li>
+                                <li><i class="fab fa-css3-alt"></i> CSS</li>
+                                <li><i class="fab fa-js-square"></i> JavaScript</li>
+                                <li><i class="fab fa-react"></i> React.js</li>
+                            </ul>
+                        </div>
+
+                        <div style="flex: 1 1 48%;">
+                            <h3 style="margin-bottom: 5px;"><i class="fas fa-server"></i> Backend & DB</h3>
+                            <ul style="margin: 0;">
+                                <li><i class="fab fa-node-js"></i> Node.js</li>
+                                <li><i class="fas fa-code"></i> Express.js</li>
+                                <li><i class="fas fa-database"></i> MySQL</li>
+                                <li><i class="fas fa-leaf"></i> MongoDB</li>
+                            </ul>
+                        </div>
+                        <div style="flex: 1 1 48%;">
+                            <h3 style="margin-bottom: 5px;"><i class="fas fa-database"></i> Databases</h3>
+                            <ul style="margin: 0;">
+                                <li><i class="fas fa-database"></i> MySQL</li>
+                                <li><i class="fas fa-leaf"></i> MongoDB</li>
+                            </ul>
+                        </div>
+
+                        <div style="flex: 1 1 48%;">
+                            <h3 style="margin-bottom: 5px;"><i class="fas fa-code-branch"></i> Version Control & Tools
+                            </h3>
+                            <ul style="margin: 0;">
+                                <li><i class="fab fa-git-alt"></i> Git</li>
+                                <li><i class="fas fa-paper-plane"></i> Postman</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="skillclasses">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>C</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+
+                <div class="skillclasses">
+                    <h3>Data Structures & Algorithms</h3>
+                    <ul>
+                        <li>Problem Solving</li>
+                        <li>Algorithms</li>
+                        <li>Competitive Programming</li>
+                    </ul>
+                </div>
+
+                <div class="skillclasses">
+                    <h3>Areas of Interest</h3>
+                    <ul>
+                        <li>Natural Language Processing (NLP)</li>
+                        <li>Artificial Intelligence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="projectpage" class="project-section">
+            <h1 class="orbitfont head project-head">Projects</h1>
+
+            <div class="project-wrapper">
+                    <div class="project-card">
+                    <img src="project_images/sample.png" alt="Project Image">
+                    <h2 class="project-title">Project Title</h2>
+                    <div class="tech-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">PHP</span>
+                    </div>
+                    <p class="project-desc">
+                        🚀 A short project description goes here. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae praesentium sapiente est. Animi ducimus error, perferendis nisi sit odit aut, reprehenderit cumque, ea quae eos amet obcaecati. Odit facere commodi laudantium perspiciatis in quod  <span class="more-text">Show More</span>
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="btn"><i class="fas fa-code"></i> Code</a>
+                        <a href="#" class="btn"><i class="fas fa-external-link-alt"></i> Live</a>
+                    </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <div id="contactpage" class="contact_card">
+        <h1 class="contact_blue">Contact Me</h1>
+        <div class="card-wrapper">
+            <div class="contactbackground"></div>
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="contact_blue">Let's Connect & Collaborate</h2>
+                    <p class="contact_white">Feel free to reach out for collaborations, project discussions, or just
+                        to say hi!</p>
+
+                    <div class="contact-info">
                         <div class="info-block">
-                          <h3 class="contact_blue">📧 Email</h3>
-                          <p class="email contact_white">231210037@nitdelhi.ac.in</p>
+                            <h3 class="contact_blue">📧 Email</h3>
+                            <p class="email contact_white">231210037@nitdelhi.ac.in</p>
                         </div>
                         <div class="info-block">
-                          <h3 class="contact_blue">📍 Address</h3>
-                          <p class="email contact_white">National Institute of Technology, Delhi Plot No. FA7, Zone P1, GT Karnal Road, Delhi-110036.</p>
+                            <h3 class="contact_blue">📍 Address</h3>
+                            <p class="email contact_white">National Institute of Technology, Delhi Plot No. FA7,
+                                Zone P1, GT Karnal Road, Delhi-110036.</p>
                         </div>
-                      </div>
+                    </div>
 
                     <div class="social social1">
-                    <a href="https://www.linkedin.com/in/devagiri-neeraj-babu-512634343" target="_blank" title="LinkedIn" class="circle-wrap" rel="noopener noreferrer"><img src="logo/linkedin_logo.png" alt="LinkedIn page" height="50px" width="50px" class="contact_img" ></a>
+                        <a href="https://www.linkedin.com/in/devagiri-neeraj-babu-512634343" target="_blank"
+                            title="LinkedIn" class="circle-wrap" rel="noopener noreferrer"><img
+                                src="logo/linkedin_logo.png" alt="LinkedIn page" height="50px" width="50px"
+                                class="contact_img"></a>
 
-                    <a href="https://github.com/neerajbabudevagiri" target="_blank" title="Github page" class="circle-wrap" rel="noopener noreferrer"><img src="logo/github_logo.png" alt="Github page" height="50px" width="50px" class="contact_img" ></a>
+                        <a href="https://github.com/neerajbabudevagiri" target="_blank" title="Github page"
+                            class="circle-wrap" rel="noopener noreferrer"><img src="logo/github_logo.png"
+                                alt="Github page" height="50px" width="50px" class="contact_img"></a>
 
-                    <a href="https://www.instagram.com/invites/contact/?igsh=bk11voajqgxb&utm_content=u8hyzag" target="_blank" title="Instagram page" class="circle-wrap" rel="noopener noreferrer"><img src="logo/instagram logo.png" alt="Instagram page" height="50px" width="50px" class="contact_img" ></a>
+                        <a href="https://www.instagram.com/invites/contact/?igsh=bk11voajqgxb&utm_content=u8hyzag"
+                            target="_blank" title="Instagram page" class="circle-wrap" rel="noopener noreferrer"><img
+                                src="logo/instagram logo.png" alt="Instagram page" height="50px" width="50px"
+                                class="contact_img"></a>
 
-                    <a href="https://www.facebook.com/share/12LHQTVXrzm/?mibextid=qi2Omg" target="_blank" title="Facebook page" class="circle-wrap" rel="noopener noreferrer"><img src="logo/facebook_logo.png" alt="Facebook page" height="50px" width="60px" class="contact_img" ></a>
+                        <a href="https://www.facebook.com/share/12LHQTVXrzm/?mibextid=qi2Omg" target="_blank"
+                            title="Facebook page" class="circle-wrap" rel="noopener noreferrer"><img
+                                src="logo/facebook_logo.png" alt="Facebook page" height="50px" width="60px"
+                                class="contact_img"></a>
 
-                    <a href="https://leetcode.com/u/Devagiri_Neeraj_Babu/" title="Leetcode page" class="circle-wrap" rel="noopener noreferrer"><img src="logo/leetcode_logo.png" alt="Leetcode page" height="50px" width="50px" class="contact_img"></a>
+                        <a href="https://leetcode.com/u/Devagiri_Neeraj_Babu/" title="Leetcode page" class="circle-wrap"
+                            rel="noopener noreferrer"><img src="logo/leetcode_logo.png" alt="Leetcode page"
+                                height="50px" width="50px" class="contact_img"></a>
                     </div>
                 </div>
-                </div>
-             </div>
+            </div>
         </div>
+    </div>
 
     </div>
-    
+
 </body>
+
 </html>
