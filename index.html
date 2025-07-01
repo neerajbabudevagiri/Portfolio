@@ -954,7 +954,114 @@
             background-color: #003f70;
         }
 
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
 
+        img,
+        video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        section {
+            padding: 40px 20px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .main-heading {
+                font-size: 2.5rem;
+            }
+
+            .sub-heading {
+                font-size: 1.5rem;
+            }
+
+            .skillclasses {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skillbox {
+                width: 80%;
+                margin: 10px 0;
+            }
+
+            #resumepage .container {
+                flex-direction: column;
+            }
+
+            #resumepage .left,
+            #resumepage .right {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .project-card,
+            .experience-card {
+                width: 90%;
+                margin: 10px auto;
+            }
+
+            .leet-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .leet-chart-card,
+            .leet-total {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            footer {
+                text-align: center;
+                padding: 20px 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .main-heading {
+                font-size: 2rem;
+            }
+
+            .sub-heading {
+                font-size: 1.2rem;
+            }
+
+            .skillbox {
+                width: 95%;
+            }
+
+            .left-bar img {
+                max-width: 120px;
+            }
+
+            .right-content {
+                padding: 15px;
+            }
+
+            .resume-download-btn {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+
+        
         @property --angle {
             syntax: '<angle>';
             inherits: false;
