@@ -826,133 +826,6 @@
             }
         }
 
-        #resumepage {
-            padding: 40px 20px;
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fc;
-            color: #333;
-        }
-
-        #resumepage .container {
-            display: flex;
-            max-width: 1000px;
-            margin: auto;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        #resumepage .left {
-            width: 25%;
-            background-color: #005b96;
-            color: white;
-            padding: 25px 20px;
-            text-align: center;
-        }
-
-        #resumepage .left img {
-            width: 100%;
-            max-width: 140px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        #resumepage .left h2 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            padding-bottom: 5px;
-        }
-
-        #resumepage .left p {
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 15px;
-        }
-
-        #resumepage .right {
-            width: 75%;
-            padding: 30px 40px;
-        }
-
-        #resumepage .right h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #222;
-        }
-
-        #resumepage .right .contact {
-            font-size: 14px;
-            margin-bottom: 25px;
-        }
-
-        #resumepage .right .contact a {
-            color: #005b96;
-            text-decoration: none;
-        }
-
-        #resumepage section {
-            margin-bottom: 30px;
-        }
-
-        #resumepage section h2 {
-            color: #005b96;
-            font-size: 20px;
-            margin-bottom: 10px;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 5px;
-        }
-
-        #resumepage section p {
-            font-size: 14px;
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-
-        #resumepage section ul {
-            padding-left: 20px;
-        }
-
-        #resumepage section ul li {
-            font-size: 14px;
-            margin-bottom: 6px;
-        }
-
-        @media screen and (max-width: 768px) {
-            #resumepage .container {
-                flex-direction: column;
-            }
-
-            #resumepage .left,
-            #resumepage .right {
-                width: 100%;
-                padding: 20px;
-            }
-
-            #resumepage .right {
-                padding-top: 0;
-            }
-
-            #resumepage .left img {
-                max-width: 120px;
-            }
-        }
-
-        .resume-download-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #005b96;
-            color: white;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-        }
-
-        .resume-download-btn:hover {
-            background-color: #003f70;
-        }
 
         html,
         body {
@@ -992,15 +865,6 @@
                 margin: 10px 0;
             }
 
-            #resumepage .container {
-                flex-direction: column;
-            }
-
-            #resumepage .left,
-            #resumepage .right {
-                width: 100%;
-                padding: 20px;
-            }
         }
 
         @media screen and (max-width: 768px) {
@@ -1055,13 +919,66 @@
                 padding: 15px;
             }
 
-            .resume-download-btn {
-                font-size: 14px;
-                padding: 8px 16px;
-            }
         }
 
-        
+
+        .resume-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f1f7ff, #ffffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .resume-content {
+            max-width: 600px;
+            width: 100%;
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #005b96;
+        }
+
+        .resume-subtext {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .resume-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .resume-buttons .btn {
+            padding: 12px 26px;
+            font-size: 16px;
+            text-decoration: none;
+            background-color: #005b96;
+            color: #fff;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 91, 150, 0.3);
+            border: 2px solid transparent;
+        }
+
+        .resume-buttons .btn:hover {
+            background-color: white;
+            color: #005b96;
+            border: 2px solid #005b96;
+            transform: translateY(-2px);
+        }
+
         @property --angle {
             syntax: '<angle>';
             inherits: false;
@@ -1206,83 +1123,19 @@
             </div>
         </div>
 
-        <div id="resumepage">
-            <h2>My Resume</h2>
-            <a href="Resume-37.pdf" download class="resume-download-btn">
-                Download Resume
-            </a>
-            <div class="container">
-                <div class="left">
-                    <img src="./profile_image.png" alt="Profile Photo">
-                    <h2>About Me</h2>
-                    <p>
-                        I am a Computer Science student at NIT Delhi with a passion for full stack development and
-                        problem-solving. Recently interned as a Full Stack Developer at Krutanic. I am skilled in C,
-                        Python,JavaScript, React, Node.js, and more. I enjoy exploring NLP and building responsive web
-                        applications.
-                    </p>
-                    <h2>Skills</h2>
-                    <p>
-                        <strong>Languages:</strong><br>C, Python, JavaScript, HTML, CSS<br><br>
-                        <strong>Frameworks/Libraries:</strong><br>React.js, Node.js<br><br>
-                        <strong>Databases:</strong><br>MongoDB, MySQL<br><br>
-                        <strong>Tools:</strong><br>Git, GitHub, Postman<br><br>
-                        <strong>Focus Areas:</strong><br>Web Development, NLP, DSA
-                    </p>
-                </div>
-
-                <div class="right">
-                    <h1>Devagiri Neeraj Babu</h1>
-                    <div class="contact">
-                        Email: 231210037@nitdelhi.ac.in | Phone: +91-6305223586<br><br>
-                        Portfolio: <a href="https://neerajbabudevagiri.github.io/Portfolio/">Portfolio</a> |
-                        GitHub: <a href="https://github.com/neerajbabudevagiri">GitHub</a>
-                    </div>
-
-                    <section>
-                        <h2>Education</h2>
-                        <p><strong>NIT Delhi</strong><br>B.Tech in Computer Science and Engineering | Graduation:
-                            2027<br>CGPA: 7.8/10</p>
-                        <p><strong>Vignan Co-operative Junior College</strong><br>Class XII – 2023 | BIEAP | 98%</p>
-                        <p><strong>Montfort High School</strong><br>Class X – 2021 | BSEAP | 596/600</p>
-                    </section>
-
-                    <section>
-                        <h2>Projects</h2>
-                        <p><strong>Traffic Flow Optimizer</strong> | HTML,CSS, Python, ML<br>
-                            • Simulates traffic and recommends optimized routing using ML<br>
-                            • Designed for integration with hardware</p>
-
-                        <p><strong>Parking Management System</strong> | HTML, CSS, JS, MySQL, PHP<br>
-                            • Logs entry/exit, generates bills, and maintains history</p>
-
-                        <p><strong>Portfolio Website</strong> | HTML, CSS, JS<br>
-                            • Personal portfolio featuring projects, skills, and LeetCode progress<br>
-                            • Responsive design with custom theme and live GitHub integration</p>
-                    </section>
-
-                    <section>
-                        <h2>Experience</h2>
-                        <p><strong>Full Stack Intern – Krutanic</strong> | June 2025 – August 2025<br>
-                            • Built dynamic frontend components<br>
-                            • Integrated APIs and optimized responsiveness<br>
-                            • Collaborated in Agile team</p>
-                    </section>
-
-                    <section>
-                        <h2>Coursework</h2>
-                        <p>• Data Structures & Algorithms<br>
-                            • Operating Systems<br>
-                            • DBMS<br>
-                            • OOP<br>
-                            • CAO<br>
-                            • AI<br>
-                            • Software Engineering</p>
-                    </section>
+        <div id="resumepage" class="resume-section">
+            <div class="resume-content">
+                <h2 class="section-title">My Resume</h2>
+                <p class="resume-subtext">Interested in my background and experience? View or download my resume below.
+                </p>
+                <div class="resume-buttons">
+                    <a href="./Resume-37.pdf" target="_blank" class="btn resume-view">📄 View
+                        Resume</a>
+                    <a href="./Resume-37.pdf" download class="btn resume-download">⬇️ Download
+                        Resume</a>
                 </div>
             </div>
         </div>
-
 
         <div class="skillpage" id="skillpage">
             <h1 class="orbitfont head skillhead">Skills</h1>
