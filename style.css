@@ -791,21 +791,21 @@ body {
 }
 
 .leet-title {
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   font-size: 2rem;
-  color: #00B2FF;
+  color: #00b2ff;
   margin-bottom: 20px;
   position: relative;
   display: inline-block;
 }
 
 .leet-title::after {
-  content: '';
+  content: "";
   display: block;
   height: 4px;
   width: 50%;
   margin: 8px auto 0;
-  background: linear-gradient(90deg, #00B2F2, #0095FF);
+  background: linear-gradient(90deg, #00b2f2, #0095ff);
   border-radius: 2px;
 }
 
@@ -834,7 +834,7 @@ body {
   margin-top: 12px;
   font-size: 1.1rem;
   font-weight: 500;
-  color: #00B2FF;
+  color: #00b2ff;
 }
 
 .leet-stats-card div {
@@ -855,7 +855,6 @@ body {
     max-width: 320px;
   }
 }
-
 
 @media screen and (max-width: 480px) {
   .main-heading {
@@ -937,12 +936,11 @@ body {
 }
 
 /* @property --angle {
-            syntax: '<angle>';
-            inherits: false;
-            initial-value: 0deg;
-        } */
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+} */
 
-/* Step 1: Ensure proper sizing for chart container and canvas */
 .leet-chart-card {
   width: 300px;
   min-height: 250px;
