@@ -928,11 +928,11 @@ body {
     transform: translateY(-2px);
 }
 
-@property --angle {
+/* @property --angle {
     syntax: "<angle>";
     inherits: false;
     initial-value: 0deg;
-}
+} */
 
 .leet-chart-card {
     width: 300px;
